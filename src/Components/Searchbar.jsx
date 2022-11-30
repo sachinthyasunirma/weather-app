@@ -12,16 +12,16 @@ function Searchbar(props) {
         setSelectedVal({ id: e.target.value });
         setLocation({ id: e.target.value })
     }
-    const MbSearch = (e) =>{
-        e.preventDefault();
-        setLocation(selectedVal)
-    }
+    // const MbSearch = (e) =>{
+    //     e.preventDefault();
+    //     setLocation(selectedVal)
+    // }
     return (
         <div className='flex flex-row justify-center my-4'>
             <div className='flex flex-row w-3/4 items-center justify-center space-x-4'>
 
                 <select
-                    onClick={handleSearch}
+                    onChange={handleSearch}
                     name="country"
                     autoComplete="country-name"
                     className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 
@@ -39,7 +39,7 @@ function Searchbar(props) {
                     <option value="metric">°C</option>
                     <option value="imperial">°F</option>
                 </select> */}
-                <button onClick={MbSearch} className='lg:hidden md:hidden'><FiSearch size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" /></button>
+                {/* <button onClick={MbSearch} className='lg:hidden md:hidden'><FiSearch size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" /></button> */}
                 <SlLocationPin size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" />
             </div>
         </div>
