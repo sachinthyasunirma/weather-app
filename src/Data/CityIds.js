@@ -8,3 +8,6 @@ const cities = [
     {"CityCode":"1796236","CityName":"Shanghai","Temp":"10.1","Status":"Clouds"},
     {"CityCode":"3143244","CityName":"Oslo","Temp":"-3.9","Status":"Clear"}
 ]
+
+export default cities;
+
