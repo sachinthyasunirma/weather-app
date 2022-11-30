@@ -6,6 +6,7 @@ import cities from '../Data/CityIds';
 function Searchbar(props) {
     const { setLocation,setUnits } = props
     const handleSearch = (e) => {
+        e.preventDefault();
         setLocation({ id: e.target.value })
     }
     // const handleUnit = (e) =>{
@@ -34,6 +35,7 @@ function Searchbar(props) {
                     <option value="metric">°C</option>
                     <option value="imperial">°F</option>
                 </select> */}
+                <button onClick={(e)=>e.preventDefault()} className='lg:hidden md:hidden'><FiSearch size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" /></button>
                 <SlLocationPin size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" />
             </div>
         </div>

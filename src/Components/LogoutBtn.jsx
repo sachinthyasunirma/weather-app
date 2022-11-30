@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import {FiLogOut} from 'react-icons/fi';
 
 function LogoutBtn() {
     const { logout } = useAuth0();
@@ -12,7 +13,7 @@ function LogoutBtn() {
                 })
             }
         >
-            Log Out
+            <FiLogOut/> Log Out
         </button>
     )
 }
