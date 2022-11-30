@@ -34,7 +34,7 @@ function WeatherPage() {
     return (
         <div>
             <TopNavbar/>
-            <Searchbar setLocation={setLocation}/>
+            <Searchbar units={units} setUnits={setUnits} setLocation={setLocation}/>
             {weatherData && (
                 <>
                     <Location weatherData={weatherData}/>
