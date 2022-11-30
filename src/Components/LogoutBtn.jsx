@@ -6,7 +6,7 @@ function LogoutBtn() {
     const { logout } = useAuth0();
     return (
         <button
-            className='text-white py-2 px-2 rounded-md text-sm font-medium hover:bg-gray-500'
+            className='flex text-white py-2 px-2 rounded-md text-sm font-medium hover:bg-gray-500'
             onClick={() =>
                 logout({
                     returnTo: window.location.origin,
