@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { SlLocationPin } from 'react-icons/sl'
 import cities from '../Data/CityIds';
 
+
 function Searchbar(props) {
+    const [selectedVal, setSelectedVal] = useState();
     const { setLocation,setUnits } = props
     const handleSearch = (e) => {
         e.preventDefault();
+        setSelectedVal({ id: e.target.value });
         setLocation({ id: e.target.value })
     }
-    // const handleUnit = (e) =>{
-    //     setUnits({units: e.target.value})
-    // }
+    const MbSearch = (e) =>{
+        e.preventDefault();
+        setLocation(selectedVal)
+    }
     return (
         <div className='flex flex-row justify-center my-4'>
             <div className='flex flex-row w-3/4 items-center justify-center space-x-4'>
@@ -35,7 +39,7 @@ function Searchbar(props) {
                     <option value="metric">°C</option>
                     <option value="imperial">°F</option>
                 </select> */}
-                <button onClick={(e)=>e.preventDefault()} className='lg:hidden md:hidden'><FiSearch size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" /></button>
+                <button onClick={MbSearch} className='lg:hidden md:hidden'><FiSearch size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" /></button>
                 <SlLocationPin size={25} className="text-white cursor-pointer transition ease-out hover:scale-75" />
             </div>
         </div>
